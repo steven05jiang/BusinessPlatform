@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+.body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+.list-products {
+	list-style-type: none;
+}
+
+.img-products {
+	width: 300px;
+	height: 300px;
+}
+
+.form-control {
+	background: #222;
+	border-color: #222;
+	color: #828282;
+}
+
+.form-control-input {
+	background: white;
+	color: black;
+	border: 1px solid #451D1D;
+	border-radius: 8px;
+	font-size: 16px;
+	height: 25px;
+	line-height: 23px;
+	width: 150px;
+	padding: 8px;
+	box-shadow: 0px 0px 8px #000000;
+	-webkit-box-shadow: 0px 0px 8px #000000;
+	-moz-box-shadow: 0px 0px 8px #000000;
+}

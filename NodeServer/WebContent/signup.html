@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WEI Platform</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body class="body">
+	<div>
+		<h1>Sign up for WEI</h1>
+	</div>
+	<div>
+		<form class="form-control" action="regist" method="post">
+			Username: <input id="username" type="text" required="required"/> 
+			Password: <input id="password" type="password" required="required"/> 
+			Confirm password: <input id="passwordCfm" type="password" required="required"/>
+			<button id="submit" type="submit">Confirm</button>
+			<button id="cancel">Cancel</button>
+		</form>
+	</div>
+	<script src="WebContent/Javascript/angular.min.js"></script>
+	<script src="WebContent/Javascript/jquery-2.1.4.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#cancel").click(function() {
+				window.location.href = "home";
+			});
+		});
+	</script>
+</body>
+</html>

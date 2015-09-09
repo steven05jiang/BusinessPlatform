@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WEI Platform</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="WebContent/CSS/main.css">
+</head>
+<body class="body">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="">WEI Platform</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+				<
+				<div class="navbar-form pull-right">
+					<form action="login" class="form-control" id="userInfo" name="userInfo" method="post">
+							Account: <input class="form-control-input" type="text"
+								id="account" name="account" required="required"> Password: <input
+								type="password" class="form-control-input" id="password" name="password" required="required">
+						<button type="submit" id="loginBtn" class="btn btn-primary">Log in</button>
+						<button id="signupBtn" class="btn btn-success">Sign up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container theme-showcase">
+		<div class="jumbotron">
+			<h1 id="h">Welcome to WEI</h1>
+			<p>This is a business platform support by Node.js. Enjoy it!</p>
+		</div>
+
+		<div ng-app="myApp" ng-controller="productCtrl">
+			<ul>
+				<li class="list-products" ng-repeat="x in names">
+					<div class="col-lg-4">
+						<img class="img-products" src={{x.img}} alt="Product image"
+							width=30% height=10%>
+						<h2>{{x.title}}</h2>
+						<p>{{x.description}}</p>
+						<p>
+							<a class="btn btn-default" href="" role="button">View details
+								»</a>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="WebContent/Javascript/angular.min.js"></script>
+	<script src="WebContent/Javascript/jquery-2.1.4.min.js"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("productCtrl", function($scope, $http) {
+			$http.get("products").success(function(response) {
+				$scope.names = response.products;
+			});
+		});
+
+		$(document).ready(function() {
+			
+			$("#signupBtn").click(function() {
+				window.location.href = "signup";
+			});
+		});
+	</script>
+</body>
+</html>
